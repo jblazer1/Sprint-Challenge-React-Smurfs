@@ -5,6 +5,7 @@ import SmurfForm from "./components/SmurfForm";
 import Smurfs from "./components/Smurfs";
 
 import axios from "axios";
+import { Route, NavLink } from "react-router-dom";
 
 class App extends Component {
   constructor(props) {
@@ -31,7 +32,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <SmurfForm postSmurf={this.postSmurf} />
+        <Route
+          path="/smurf-form"
+          render={props => <SmurfForm {...props} postSmurf={this.postSmurf} />}
+        />
+        {/* <SmurfForm postSmurf={this.postSmurf} /> */}
         <Smurfs smurfs={this.state.smurfs} />
       </div>
     );
