@@ -32,6 +32,18 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <ul className="navbar">
+          <li>
+            <NavLink to="/" exact activeClassName="activeNavButton">
+              Smurfs
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/smurf-form" activeClassName="activeNavButton">
+              Smurf Form
+            </NavLink>
+          </li>
+        </ul>
         <Route
           path="/smurf-form"
           render={props => <SmurfForm {...props} postSmurf={this.postSmurf} />}
